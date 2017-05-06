@@ -35,7 +35,7 @@ def mainrequest():
 			if keyinput =='/clear': 
 				while cips2 < 50:
 					sendclear()
-					cips2 = cips + 1	
+					cips2 = cips2 + 1	
 			while cips < (len(keyinput)):
 				h = httplib.HTTPConnection(rokuip + ':8060')
 				if keyinput[-1*(len(keyinput)):][cips] == ' ':
