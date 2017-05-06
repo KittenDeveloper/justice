@@ -32,8 +32,8 @@ def mainrequest():
 	elif commandinput[:9] == 'keyboard':
 		while 1:
 			commandinput = raw_input('/quit and to return or /clear to clear')
-			if commandinput = '/quit': break
-			if commandinput ='/clear': clearfunc()
+			if commandinput == '/quit': break
+			if commandinput =='/clear': clearfunc()
 			while cips < (len(commandinput)-9):
 				h = httplib.HTTPConnection(rokuip + ':8060')
 				if commandinput[-1*(len(commandinput)-9):][cips] == ' ':
