@@ -29,24 +29,24 @@ def mainrequest():
 			cips = cips + 1	
 		mainrequest()
 	elif commandinput[:9] == 'keyboard':
-	def mnloop():
-		while 1:
-			keyinput = raw_input('/quit and to return or /clear to clear ')
-			if not keyinput: break
-			if keyinput == '/quit': mainrequest()
-			while keyinput =='/clear': 					while cips2 < 50:
-					sendclear()
-					cips2 = cips2 + 1	
-			while cips < (len(keyinput)):
-				h = httplib.HTTPConnection(rokuip + ':8060')
-				if keyinput[-1*(len(keyinput)):][cips] == ' ':
-				url = '/keypress/'+ "lit_"+'%20'
-				else:
-					url = '/keypress/'+ "lit_"+keyinput[-1*(len(keyinput)):][cips]
-				h.request('POST', url)
-				cips = cips +1
-			mnloop()
-			
+		def mnloop():
+			while 1:
+				keyinput = raw_input('/quit and to return or /clear to clear ')
+				if not keyinput: break
+				if keyinput == '/quit': mainrequest()
+				while keyinput =='/clear': 					while cips2 < 50:
+						sendclear()
+						cips2 = cips2 + 1	
+				while cips < (len(keyinput)):
+					h = httplib.HTTPConnection(rokuip + ':8060')
+					if keyinput[-1*(len(keyinput)):][cips] == ' ':
+					url = '/keypress/'+ "lit_"+'%20'
+					else:
+						url = '/keypress/'+ "lit_"+keyinput[-1*(len(keyinput)):][cips]
+					h.request('POST', url)
+					cips = cips +1
+				mnloop()
+				
 	elif commandinput == 'quit':
 		sys.exit("Bye!")
 	elif commandinput[:6] == 'launch':
