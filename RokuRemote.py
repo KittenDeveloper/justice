@@ -32,7 +32,7 @@ def mainrequest():
 		while 1:
 			keyinput = raw_input('/quit and to return or /clear to clear ')
 			if keyinput == '/quit': break
-			if keyinput =='/clear': 
+			while keyinput =='/clear': 
 				while cips2 < 50:
 					sendclear()
 					cips2 = cips2 + 1	
