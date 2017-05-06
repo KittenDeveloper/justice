@@ -13,6 +13,7 @@ def mainrequest():
 	commandinput = raw_input('Enter Command: ')
 	
 	cips = 0
+	cips2 = 0
 	if commandinput == 'help':
 		print("Commands are as follows:")
 		print("Home, Rev, Fwd, Play, Select, Left, Right, Down, Up, Back,")
@@ -32,9 +33,9 @@ def mainrequest():
 			keyinput = raw_input('/quit and to return or /clear to clear ')
 			if keyinput == '/quit': break
 			if keyinput =='/clear': 
-				while cips < 50:
+				while cips2 < 50:
 					sendclear()
-					cips = cips + 1	
+					cips2 = cips + 1	
 			while cips < (len(keyinput)):
 				h = httplib.HTTPConnection(rokuip + ':8060')
 				if keyinput[-1*(len(keyinput)):][cips] == ' ':
