@@ -40,7 +40,7 @@ def mainrequest():
 				if commandinput[-1*(len(commandinput)):][cips] == ' ':
 					url = '/keypress/'+ "lit_"+'%20'
 				else:
-					url = '/keypress/'+ "lit_"+commandinput[-1*(len(commandinput)-9):][cips]
+					url = '/keypress/'+ "lit_"+commandinput[-1*(len(commandinput)):][cips]
 				h.request('POST', url)
 				cips = cips +1
 		mainrequest()
