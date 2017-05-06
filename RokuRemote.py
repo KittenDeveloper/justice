@@ -22,8 +22,8 @@ def mainrequest():
 		print("For more information goto:", "https://sdkdocs.roku.com/display/sdkdoc/External+Control+Guide")
 		print("quit to quit")
 		mainrequest()
-	elif commandinput[:6] == 'clear:':
-		while cips < int(commandinput[-1*(len(commandinput)-6):]):
+	elif commandinput[:6] == 'clear':
+		while cips < ro
 			sendclear()
 			cips = cips + 1
 		mainrequest()
