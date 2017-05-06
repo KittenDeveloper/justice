@@ -23,7 +23,7 @@ def mainrequest():
 		print("quit to quit")
 		mainrequest()
 	elif commandinput[:6] == 'clear':
-		while cips < ro
+		while cips < 50:
 			sendclear()
 			cips = cips + 1
 		mainrequest()
