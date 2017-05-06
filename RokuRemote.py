@@ -46,7 +46,7 @@ def mainrequest():
 						url = '/keypress/'+ "lit_"+keyinput[-1*(len(keyinput)):][cips]
 					h.request('POST', url)
 					cips = cips +1
-				mnloop()
+		mnloop()
 				
 	elif commandinput == 'quit':
 		sys.exit("Bye!")
