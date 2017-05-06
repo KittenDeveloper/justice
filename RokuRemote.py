@@ -1,6 +1,6 @@
 import sys
 import httplib
-
+# i did that
 print("RokuRemote Version 1.0| type help for more info")
 rokuip = raw_input('What is your rokus ip: ')
 if rokuip == "":
