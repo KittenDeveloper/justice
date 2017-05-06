@@ -35,7 +35,7 @@ def mainrequest():
 				while cips < 50:
 					sendclear()
 					cips = cips + 1	
-				mainrequest()
+			commandinput = raw_input()
 			while cips < (len(commandinput)-9):
 				h = httplib.HTTPConnection(rokuip + ':8060')
 				if commandinput[-1*(len(commandinput)-9):][cips] == ' ':
