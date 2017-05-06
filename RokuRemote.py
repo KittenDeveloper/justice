@@ -35,10 +35,9 @@ def mainrequest():
 				while cips < 50:
 					sendclear()
 					cips = cips + 1	
-			commandinput = raw_input()
-			while cips < (len(commandinput)-9):
+			while cips < (len(commandinput)):
 				h = httplib.HTTPConnection(rokuip + ':8060')
-				if commandinput[-1*(len(commandinput)-9):][cips] == ' ':
+				if commandinput[-1*(len(commandinput)):][cips] == ' ':
 					url = '/keypress/'+ "lit_"+'%20'
 				else:
 					url = '/keypress/'+ "lit_"+commandinput[-1*(len(commandinput)-9):][cips]
