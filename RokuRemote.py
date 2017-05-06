@@ -29,18 +29,18 @@ def mainrequest():
 		mainrequest()
 	elif commandinput[:9] == 'keyboard':
 		while 1:
-			commandinput = raw_input('/quit and to return or /clear to clear ')
-			if commandinput == '/quit': break
-			if commandinput =='/clear': 
+			keyinput = raw_input('/quit and to return or /clear to clear ')
+			if keyinput == '/quit': break
+			if keyinput =='/clear': 
 				while cips < 50:
 					sendclear()
 					cips = cips + 1	
-			while cips < (len(commandinput)):
+			while cips < (len(keyinput)):
 				h = httplib.HTTPConnection(rokuip + ':8060')
-				if commandinput[-1*(len(commandinput)):][cips] == ' ':
+				if keyinput[-1*(len(keyinput)):][cips] == ' ':
 					url = '/keypress/'+ "lit_"+'%20'
 				else:
-					url = '/keypress/'+ "lit_"+commandinput[-1*(len(commandinput)):][cips]
+					url = '/keypress/'+ "lit_"+keyinput[-1*(len(keyinput)):][cips]
 				h.request('POST', url)
 				cips = cips +1
 		mainrequest()
