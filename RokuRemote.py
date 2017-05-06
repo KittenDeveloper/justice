@@ -34,7 +34,8 @@ def mainrequest():
 				keyinput = raw_input('/quit and to return or /clear to clear ')
 				if not keyinput: break
 				if keyinput == '/quit': mainrequest()
-				while keyinput =='/clear': 					while cips2 < 50:
+				while keyinput =='/clear': sendclear()
+				while cips2 < 50:
 						sendclear()
 						cips2 = cips2 + 1	
 				while cips < (len(keyinput)):
