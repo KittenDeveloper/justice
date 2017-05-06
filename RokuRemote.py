@@ -3,6 +3,10 @@ import httplib
 # i did that
 print("RokuRemote Version 1.0| type help for more info")
 rokuip = raw_input('What is your rokus ip: ')
+
+global cips
+global cips2
+
 if rokuip == "":
 	rokuip = "192.168.200.9"
 def sendclear():
@@ -11,7 +15,9 @@ def sendclear():
 	h.request('POST', url)
 def mainrequest():
 	commandinput = raw_input('Enter Command: ')
-	
+	global cips
+	global cips2
+
 	cips = 0
 	cips2 = 0
 	if commandinput == 'help':
