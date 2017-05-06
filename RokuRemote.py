@@ -23,17 +23,19 @@ def mainrequest():
 		print("quit to quit")
 		mainrequest()
 	elif commandinput[:6] == 'clear:':
-		def clearfunc():
-			while cips < 50:
-				sendclear()
-				cips = cips + 1
-			mainrequest()
-		clearfunc()
+		while cips < 50:
+			sendclear()
+			cips = cips + 1	
+		mainrequest()
 	elif commandinput[:9] == 'keyboard':
 		while 1:
-			commandinput = raw_input('/quit and to return or /clear to clear')
+			commandinput = raw_input('/quit and to return or /clear to clear ')
 			if commandinput == '/quit': break
-			if commandinput =='/clear': clearfunc()
+			if commandinput =='/clear': 
+				while cips < 50:
+					sendclear()
+					cips = cips + 1	
+				mainrequest()
 			while cips < (len(commandinput)-9):
 				h = httplib.HTTPConnection(rokuip + ':8060')
 				if commandinput[-1*(len(commandinput)-9):][cips] == ' ':
