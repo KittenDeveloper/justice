@@ -15,9 +15,6 @@ def sendclear():
 	h.request('POST', url)
 def mainrequest():
 	commandinput = raw_input('Enter Command: ')
-	global cips
-	global cips2
-
 	cips = 0
 	cips2 = 0
 	if commandinput == 'help':
@@ -67,4 +64,4 @@ def mainrequest():
 		url = '/keypress/'+ commandinput
 		h.request('POST', url)
 		mainrequest()
-mainrequest()
+v = mainrequest()
