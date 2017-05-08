@@ -2,6 +2,10 @@
 import httplib
 import Tkinter
 import socket
+import time
+import os
+
+os.system('sudo apt-get install python-tk')
 
 rootmn = Tkinter.Tk()
 rootmn.title=("Roku Remote")
@@ -80,6 +84,7 @@ def keyloop():
 			url = '/keypress/'+ "lit_"+keyinput[-1*(len(keyinput)):][cips]
 		h.request('POST', url)
 		cips = cips +1
+		sleep(0.1)
 def clearfunc():
 	cips2=0
 	while cips2 < 50:
