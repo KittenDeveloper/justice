@@ -4,7 +4,7 @@ import Tkinter
 import socket
 import time
 import os
-from Time import sleep
+from time import sleep
 
 os.system('sudo apt-get install python-tk')
 
