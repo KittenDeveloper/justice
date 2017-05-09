@@ -3,6 +3,10 @@
 import multiprocessing
 import subprocess
 import os
+from socket import *
+from time import sleep
+
+s = socket(AF_INET, SOCK_STREAM)
 
 def pinger( job_q, results_q ):
     DEVNULL = open(os.devnull,'w')
@@ -39,5 +43,9 @@ if __name__ == '__main__':
         p.join()
 
     while not results.empty():
-        ip = results.get([0])
-        print(ip)
+        
+        ip = results.get()
+        portresult = s.connect_ex((str(ip), 8060))
+        sleep(.5)
+        #portresult = s.connect_ex((str(ip), 8060))
+        print(ip + ':  '+ str(portresult))
