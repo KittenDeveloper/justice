@@ -4,10 +4,13 @@ import Tkinter
 import socket
 import time
 import os
+import sys
 from time import sleep
 
-os.system('sudo apt-get install python-tk')
-
+if sys.platform.dist() == 'Ubuntu':
+	os.system('sudo apt-get install python-tk')
+else:
+	print sys.platform.dist()
 rootmn = Tkinter.Tk()
 rootmn.title=("Roku Remote")
 
@@ -26,8 +29,10 @@ def ipfunc():
 		allowedip=0
 	if allowedip==1:
 		root.pack()
+		settingpg.pack_forget()
 	else:
 		root.pack_forget()
+		
 
 def sendcmd():
 	global commandinput
@@ -75,6 +80,7 @@ def homebtn():
 	commandinput = 'home'
 	sendcmd()
 def keyloop():
+	
 	cips=0
 	keyinput = keyenter.get()	
 	while cips < (len(keyinput)):
@@ -86,6 +92,7 @@ def keyloop():
 		h.request('POST', url)
 		cips = cips +1
 		sleep(0.1)
+		
 def clearfunc():
 	cips2=0
 	while cips2 < 50:
@@ -95,15 +102,22 @@ def sendclear():
 	url = '/keypress/'+ 'backspace'
 	h = httplib.HTTPConnection(rokuip + ':8060')
 	h.request('POST', url)
+def showsettings():
+	settingpg.pack()
+settingpg=Tkinter.Frame(rootmn)
+settingpg.pack
 
-enteripbtn1 = Tkinter.Button(rootmn, text="Enter Roku IP:", command=ipfunc, bg="black", fg="white" )
+enteripbtn1 = Tkinter.Button(settingpg, text="Enter Roku IP:", command=ipfunc, bg="black", fg="white" )
 enteripbtn1.pack()
 
-rokubox = Tkinter.Entry(rootmn)
+rokubox = Tkinter.Entry(settingpg)
 rokubox.pack()
 
 root = Tkinter.Frame(rootmn)
 root.pack_forget()
+
+settingbtn1=Tkinter.Button(root, text="Settings", command=showsettings)
+settingbtn1.pack()
 
 keyenter= Tkinter.Entry(root)
 keyenter.grid(column=2, row=7)
