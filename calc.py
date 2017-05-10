@@ -1,7 +1,7 @@
 import Tkinter
-
+import __future__
 def solveit():
-	label1.config(text=eval(input1.get()))
+	label1.config(text=eval(compile(input1.get(),'<string>','eval', __future__.division.compiler_flag)))
 
 root= Tkinter.Tk()
 root.title("Calculator")
