@@ -11,6 +11,9 @@ def appendfunc():
 	state =2
 	search.pack_forget()
 	append.pack()
+	entrybox1.delete(0, 'end')
+	entrybox2.delete(0, 'end')
+
 def enterfunc():
 	global dict1
 	global state
@@ -37,6 +40,7 @@ def searchfunc():
 	state=1
 	search.pack()
 	append.pack_forget()
+	searchbox1.delete(0, 'end')
 	
 
 root=Tkinter.Tk()
