@@ -10,6 +10,7 @@ def appendfunc():
 	global state
 	searchbtn.pack(side='top')
 	state =2
+	lbl1.config(text=" ")
 	search.pack_forget()
 	append.pack()
 	entrybox1.delete(0, 'end')
@@ -19,30 +20,30 @@ def enterfunc():
 	
 	global dict1
 	global state
-	searchbox1.delete(0, 'end')
-	entrybox1.delete(0, 'end')
-	entrybox2.delete(0, 'end')
-	if state == 1:
-		try:
-			with open('example.csv', 'rb') as csv_file:
-				reader = csv.reader(csv_file)
-				mydict = {rows[0]:rows[1] for rows in reader}
+	with open('example.csv', 'rb') as csv_file1:
+		reader = csv.reader(csv_file1)
+		mydict = {rows[0]:rows[1] for rows in reader}
+		if state == 1:
+			try:
 				lbl1.config(text=mydict[searchbox1.get()])
-		except:
-			lbl1.config(text="Invalid Search Entry")
-	elif state==2:
-		try:
-			dict1[entrybox1.get()]=entrybox2.get();
-			with open('example.csv', 'wb') as csv_file:
-				writer = csv.writer(csv_file)
-				for key, value in dict1.items():
-				   writer.writerow([key, value])
-		except:
-			lbl1.config(text="Invalid Append Entry")
-		csv_file.close()
+			except:
+				lbl1.config(text="Invalid Search Entry")
+		elif state==2:
+			try:
+				mydict[entrybox1.get()]=entrybox2.get();
+				with open('example.csv', 'wb') as csv_file:
+					writer = csv.writer(csv_file)
+					for key, value in mydict.items():
+					   writer.writerow([key, value])
+				entrybox1.delete(0, 'end')
+				entrybox2.delete(0, 'end')
+
+			except:
+				lbl1.config(text="Invalid Append Entry")
 def searchfunc():
 	global state
 	state=1
+	lbl1.config(text=" ")
 	searchbtn.pack_forget()
 	search.pack()
 	append.pack_forget()
