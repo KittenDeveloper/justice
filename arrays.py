@@ -1,6 +1,7 @@
 import Tkinter
 import csv
 
+
 global state
 global dict
 dict1={}
