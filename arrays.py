@@ -16,8 +16,12 @@ def appendfunc():
 	entrybox2.delete(0, 'end')
 
 def enterfunc():
+	
 	global dict1
 	global state
+	searchbox1.delete(0, 'end')
+	entrybox1.delete(0, 'end')
+	entrybox2.delete(0, 'end')
 	if state == 1:
 		try:
 			with open('example.csv', 'rb') as csv_file:
