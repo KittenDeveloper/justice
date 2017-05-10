@@ -1,7 +1,16 @@
 import Tkinter
+import time
 
 def drawfunc():
-	CANV.create_oval(50,50,250,250,fill="blue")
+	loc=50
+	loc2=250
+	while 1:
+		time.sleep(0.01)
+		loc=loc+1
+		loc2=loc2+1
+		CANV.create_oval(loc,50,loc2,250,fill="blue")
+		root.update()
+		if loc ==1000: break
 
 root=Tkinter.Tk()
 root.title("Draw Circle")
