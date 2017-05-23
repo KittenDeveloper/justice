@@ -1,6 +1,4 @@
 function import(newfile){
-   elem = document.createElement("div");
-   elem.id = 'myImports';
-   elem.innerHTML += '<script type="text/javascript" src="'+newfile+'"></script>'
-   document.body.insertBefore(elem,document.body.childNodes[0]);
+document.body.innerHTML += '<div id="imports"></div>';
+document.getElementById("imports").innerHTML += '<script type="text/javascript" src="'+newfile+'"></script>'
 }
