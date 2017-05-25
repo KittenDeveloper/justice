@@ -1,0 +1,12 @@
+use CGI qw(:all);
+use MIME::Base64;
+$cgi = new CGI();
+print "Content-type: text/html\n\n";
+print 'Uploading...';
+local $/ = undef;
+open (FILE, '>>',"/SERVER/cdatabase/".cookie('username').".cdb");
+binmode FILE;
+$pfile=$cgi->upload('photo')->handle;
+print 'done';
+print FILE encode_base64($cgi->upload('photo')).':'.param('type').':'.param('description').';';
+print '<meta http-equiv="refresh" content="0; url=/catalog_it.html" />';
