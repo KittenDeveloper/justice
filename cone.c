@@ -72,7 +72,7 @@ i=0;
 }
 i=0;
 y=0;
-grid[ypos][xpos]='Q';
+grid[ypos][xpos]='X';
 for(int i = 0; i < 10; i++) {
     for(int y = 0; y <10; y++) {
         printf("%c", grid[i][y]);
