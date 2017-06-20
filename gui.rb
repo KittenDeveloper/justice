@@ -33,7 +33,7 @@ function send(req)
 }
 function end()
 {
-for (i=0; i < 6; i++){
+for (i=0; i < 12; i++){
 send('QUIT:STOP:END');
 wait(500);
 }
