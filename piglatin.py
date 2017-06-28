@@ -1,5 +1,5 @@
 import sys
-if (len(sys.argv)>2 or len(sys.argv)<2):
+if (len(sys.argv)>2):
 	print("Usage: "+sys.argv[0]+" \"string to convert\"")
 	exit()
 def convertword(x):
@@ -8,4 +8,4 @@ def convertword(x):
 	return modifiedword+firstchar+"ay"
 def convertstring(x):
 	return list(map(convertword,x.split(" ")))
-print(convertstring(sys.argv[1]))
+print(convertstring(sys.argv[1]).join(" "))
