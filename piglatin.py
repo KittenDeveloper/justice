@@ -8,8 +8,9 @@ def convertword(x):
 	return modifiedword+firstchar+"ay"
 def convertstring(x):
 	return " ".join(list(map(convertword,x.split(" "))))
+def puts(x):
+	print("\n"+x)
 if (len(sys.argv)>2):
-	for x in list(map(lambda x:convertstring(x), sys.argv[1:])):
-		print(x+"\n")
+	map(puts,(map(lambda x:convertstring(x), sys.argv[1:])))
 else:
-	print(convertstring(sys.argv[1]))
+	puts(convertstring(sys.argv[1]))
